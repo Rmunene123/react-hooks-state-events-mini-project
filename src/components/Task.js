@@ -1,13 +1,15 @@
 import React from "react";
 
-function Task() {
+function TaskList({ tasks }) {
   return (
-    <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+    <div className="tasks">
+      {tasks.map((task, index) => (
+        <div key={index} className="task">
+          {task.text}
+        </div>
+      ))}
     </div>
   );
 }
 
-export default Task;
+export default TaskList;
